@@ -1,0 +1,3 @@
+tar:  %name-%version
+copy: *.service
+copy: *.png
