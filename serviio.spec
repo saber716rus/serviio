@@ -8,7 +8,7 @@ License: Freeware
 Summary: A free media server
 Url: https://download.serviio.org/releases/
 Group: Networking/Other
-Source: %oname-linux.tar.gz
+Source: serviio-%version-linux.tar
 Source1: serviio.service
 Source3: serviio.png
 BuildRequires: tar
@@ -49,10 +49,10 @@ getent group serviio >/dev/null || groupadd -r serviio
 exit 0
 
 %post
- %post_service %name.service
+ %post_service %name
 
 %preun
-%preun_service %name.service
+%preun_service %name
 
 #----------------------------------------------------------------
 
@@ -61,7 +61,7 @@ exit 0
 
 %build
 %install
-install -d %buildroot%_datadir{/java/serviio/bin,java/serviio/config,java/serviio/lib,java/serviio/library,java/serviio/plugins,java/serviio/log}
+install -d %buildroot%_datadir/{java/serviio/bin,java/serviio/config,java/serviio/lib,java/serviio/library,java/serviio/plugins,java/serviio/log}
 install -m 0755 bin/*.sh %buildroot%_datadir/java/serviio/bin
 install -m 644 config/*.xml %buildroot%_datadir/java/serviio/config
 install -m 644 lib/*.jar %buildroot%_datadir/java/serviio/lib
