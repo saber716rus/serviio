@@ -1,0 +1,1030 @@
+2.1
+===
+
+- hide genres and series which are not available for the user; ticket #1125
+- added support for serving some TrueHD formats without transcoding; ticket #1110
+- added support for .m4b files; ticket #1133
+- added profile for Samsung N series; ticket #1122
+- introduced user.vmoptions file to keep user system properties intact during upgrade (Windows); ticket #1137
+
+- fixed not being able to update a user on a renderer; ticket #1121
+- fixed icon sizes on the MediaBrowser landing page; ticket #1126
+- fixed null/null in some video titles (requires metadata re-scan); ticket #1132
+- fixed online feed identifiers overflowing for some large libraries; ticket #1128
+- fixed looking up movies by year on TheMovieDb.org; ticket #1123
+
+- updated Java to OpenJDK 1.8_242
+
+2.0
+===
+
+- added support for multiple users (Pro only); ticket #931
+- added browsing Movies by duration; ticket #946
+- added Display name to local Shared folders; ticket #1041
+- added the possibility to ignore folders by name, per Shared folder; ticket #1084
+- added the possibility to ignore files by extension, per Shared folder; ticket #740
+- added support for mpjpeg video container; ticket #1003
+- added support for Cinepak and Sorenson video (1/3) codecs; ticket #1071
+- log out (in DEBUG) details of matched transcoding rule; ticket #1093
+- allow H265 and MP3/AC3 codecs in HLS format; ticket #1001
+- updated Roku profiles with multi-channel support via HLS
+
+- fixed empty folders when browsing on VLC Android; ticket #1062
+- disabled autoplay in MediaBrowser when it's only available in a muted state; ticket #1090
+
+- updated jaudiotagger
+
+1.10.1
+======
+
+- updated Roku profiles
+
+- fixed a XXE security vulnerability
+- fixed issues with running on Java 11
+
+- updated Java to 1.8.0_191
+
+1.10
+====
+
+- support for multiple genres in audio files; ticket #1066
+- added forceSquarePixels attribute to transcoding definition; ticket #974
+- added 4:3, 3:2 and 21:9 Display Aspect Ratio options to the transcoding definition; ticket #974
+- reload the logging configuration file when Start Server is clicked in the Console
+- added widthGreaterThan and heightGreaterThan transcoding matchers to enable limiting 4k files when not supported; ticket #1064
+- added maxWidth parameter to video transcoding definition in order to limit wide videos; ticket #876
+- faster search for subtitles on opensubtitles.org; ticket #1058
+- expose CDS ports via system properties UPDATE DOCS serviio.cdsHttpPort, serviio.cdsHttpsPort
+- extract embedded metadata from video (and otherwise unsupported) audio files; ticket #665
+- changed default log file size to 5MB; ticket #1069
+- added support for Opus audio codec; ticket #1073
+- added support for .webm files; ticket #1079
+- added supported DLNA profiles for MKV files; ticket #1063
+- package 64-bit FFmpeg in the Windows installer and use on 64-bit systems
+- use native fullscreen in MediaBrowser on iOS devices; ticket #1085
+- added a profile for Xbox One S/X; ticket #1032
+
+- fixed playback of online resources in MediaBrowser; ticket #1081
+- fixed NullPointerException when adding some images; ticket #1077
+- fixed various iOS problems in MediaBrowser #1074
+- fixed language code matching in OpenSubtitles results; ticket #1086
+
+- updated commons-imaging
+- updated FFmpeg to 3.4.4
+- updated Java to 1.8.0_181
+
+
+1.9.2
+=====
+
+- reload the profiles when Start Server is clicked in the Console; ticket #1004
+- profiles in user-profiles.xml are detected with higher priority than those in profiles.xml; ticket #1022
+- better register playback progress events from MediaBrowser; ticket #966
+
+- fixed MediaBrowser playback on Internet Explorer 11; ticket #1048
+- fixed MediaBrowser failing to close the player window on iOS; ticket #1048
+- PS4 now plays FLAC audio natively
+- fixed parsing user rating with decimal comma character; ticket #1055
+- fixed library stopping being updated after 24 hours; ticket #1054
+
+1.9.1
+=====
+
+- ignore .@__thumb QNAP folders; ticket #1021
+- upgrade to TheTVDB.com API v2; ticket #945
+- enabled native 4k H264 playback in MediaBrowser on Desktop
+- added support for idx/sub bitmap subtitles; ticket #1035
+- added support for 'forced' external subtitle files; ticket #1034
+- added support audio HLS files; ticket #857
+- added Samsung M series profile; ticket #1037
+
+- fixed passing clientId and start parameters to CDS when playing HLS content; ticket #1018
+- fixed parsing video rating for some Locales; ticket #1020
+- detect subtitle files immediately when they are added; ticket #1024
+- increase timeout for playing HLS videos in MediaBrowser; ticket #1023
+- fixed adding online sources with URL ending with a colon; ticket #1011
+- show relevant cover image when browsing artists and other roles; ticket #1029
+- fixed removing multiple shared folders at the same time; ticket #1036
+- fixed duplicates being left in the library after editing shared folder path; ticket #1045
+- fixed audio playback in MediaBrowser on iOS devices; ticket #1031
+
+- updated Java to 1.8.0_162
+
+1.9
+===
+
+- MediaBrowser now used HTML5 video renderer, instead of Flash; ticket #952
+- enabled giving Renderers user-friendly names; ticket #970
+- enhance trakt.tv XBMC episode tracking; ticket #983
+- added User Rating browsing category; ticket #387
+- use Unknown for video metadata entities only when the Descriptive metadata is used for the Shared folder; ticket #976
+- All Music (and other virtual categories) are now possible to be turned-off; ticket #980
+- added Edit context menu to the Console input fields; ticket #924
+- users can now store their profiles in user-profiles.xml file; ticket #766
+- added new Roku profiles; ticket #994
+
+- fixed retrieving genres on mySQL engine; ticket #997
+- fixed folder share browsing in the Console to properly deal with ampersands in the folder name; ticket #978
+- correctly detect character encoding of playlist files; ticket #985
+- fix multi-track audio transcoding; ticket #986
+- fixed detection and displaying of Hebrew subtitles
+- fixed type in serviio.hdThumbnailResolution system property; ticket #1006
+- fixed subtitles not delivered completely for some renderers; ticket #956
+- fixed Java location for QNAP ARM devices; ticket #1009
+
+- updated FFmpeg to 3.2.4
+- updated Java to 1.8.0_131
+
+1.8
+===
+
+- detect start and stop of a file playback and include notifications in the Console; ticket #898
+- track your video collection and playback progress using Trakt.tv integration; ticket #594
+- display the item being played per Renderer in the Console; ticket #965
+- added support for multiple genres per media file; ticket #268
+- setting a poller mechanism per shared folder; ticket #902
+- added /profiles endpoint to the CDS API; ticket #953
+- added setting to prefer multichannel audio tracks during video delivery; ticket #961
+- added support for eac3 audio; ticket #969
+- added support for native playback of H265 in MpegTS where supported; ticket #971
+
+- fixed Folders browsing category sorting to be case insensitive; ticket #932
+- add BOM mark to extracted UTF-8 subtitles to fix displaying them on some devices; ticket #880
+- fixed folder names with & getting truncated in MediaBrowser; ticket #948
+
+1.7.1
+=====
+
+- fixed subtitles being cut short; ticket #956
+- fixed metadata caching for online content
+- music tracks are now sorted alphabetically in the virtual All music folder for artists and album artists; ticket #955
+- fixed subtitles UTF-8 encoding on some devices
+- better notification when authentication to OpenSubtitles.org fails
+
+1.7
+===
+
+- added support for audio track selection / preference in both, DLNA and CDS (Pro only) mode; ticket #235
+- added the ability to switch audio track of video files to MediaBrowser (Pro only); ticket #942
+- added support for automatic subtitle download from opensubtitles.org; ticket #632;
+- added a setting to fall-back to the 'default' embedded subtitle if there is not language match; ticket #730
+- added an option to include user rating in videos' titles; ticket #401
+- libshine integration now supported for audio files as well; ticket #623
+- added support for HW accelerated H264 encoder (a user-provided FFmpeg with QSV support); ticket #930
+- added styling options for text-based hard subs; ticket #853
+- show album artist name when browsing Albums in MediaBrowser (Pro only); ticket #895
+- image management made more memory efficient; ticket #935
+- added a system property to specify the max. resolution of HD thumbnails; ticket #861
+- subtitles character encoding can now be automatically guessed; ticket #872
+- use HLS FFmpeg muxer for AppleHttp transcoding; ticket #927
+- added All Music browsing categories for Artists and Album Artists; ticket #697
+- added Media Center Master metadata extractor; ticket #904
+- added Favourite Series browsing category; ticket #897
+- added support for WAV files; ticket #314
+- added support for WMA Lossless; ticket #314
+- added support for Apple Lossless (ALAC); ticket #314
+
+- fixed transcoded playback on Samsung devices; ticket #939
+- fixed https for iOS and other HLS-consuming devices; ticket #943
+- improved h265 transcoding for Sony profiles; ticket #937
+
+- updated FFmpeg to 3.0.2
+- updated JRE to 1.8.0_91
+
+1.6.1
+=====
+
+- added support for fixed point mp3 encoding using Shine; ticket #623
+- fall back to themoviedb.org for series search if thetvdb.com is not available; ticket #903
+- added support for DSF audio files; ticket #856
+- added support for Shine mp3 encoder for low powered NAS devices; ticket #623
+- Samsung J now plays MP4 / H265 files without transcoding; ticket #893
+- added support for VP9 video codec; ticket #852
+- added support for HTTPS for the REST APIs, web console and MediaBrowser; ticket #877
+- when stopping the server, stop any running FFmpeg processes and clean the temporary transcoding folder; ticket #427
+- reload the Console page after a successful Online Sources import; ticket #912
+- prevented caching subtitles by the renderers so that correct subtitles are always delivered; ticket #917
+- enabled user defined thumbnail for all online source types; ticket #923
+- added a separate profile for Android devices; ticket #909
+
+- fixed OSX installer not upgrading the Console in 1.6; ticket #905
+- fixed auto-scroll behaviour in MediaBrowser playlist view; ticket #867
+- fixed transcoding being used in some cases when it was not necessary
+- fixed adding ServiioLinks in the Console; ticket #915
+- properly handling error when downloading feed thumbnail; ticket #922
+- fixed iOS transcoded playback to always start from the beginning; ticket #887
+- fixed Samsung devices showing invalid fixed duration; ticket #894 
+- MediaBrowser link from the Console executable now opens in a system browser; ticket #907
+- fixed LaunchDaemon override issue forcing Server launch at startup; ticket #916
+
+
+1.6
+===
+
+- added support for files stacking (Pro only); ticket #301
+- redesigned the console; ticket #682
+- added support for bitmap-based subtitles (via hardsubs rendering); ticket #644
+- added REST endpoint for retrieving filesystem folders
+- shared folders can now be ordered in the console; ticket #226
+- added support for Samsung J series subtitles; ticket #885
+
+- make the server discoverable when the bind IP address is changed in the console; ticket #878
+- focus on textbox when press Search Button in MediaBrowser; ticket #868
+- fixed video thumbnail missing in the playlist in MediaBrowser after search; ticket #874
+- fixed MediaBrowser locking up when switching online audio streams; ticket #869
+- fixed Date of files being shows as 1/1/1970 on Samsung TVs; ticket #836
+
+- profiles HardsubsTranscoding element replaced with GenericTranscoding
+
+- updated Apache Derby to 10.12.1.1
+
+1.5.2
+=====
+
+- fixed automatic library scanning not kicking in on OSX (and other POLLER based systems)
+- added support for adding files that are being downloaded to a shared folder via the delta scan; ticket #859
+- fixed setting socket buffer for CDS resources; ticket #862
+
+- updated bundled JRE to 1.8.0_40
+
+1.5.1
+=====
+
+- added serviio.libraryPollerFrequency system property for controlling the timeout of POLLER frequency
+- added serviio.forceLibraryPoller system property for forcing the usage of POLLER library scanner; ticket #849
+- series can now be named with the IMDB ID as a search hint (as well as movies); ticket #839
+- optimized embedded burned-in subtitles delivery so that it doesn't time out; ticket #838
+- added support for series thumbnails with XBMC metadata source; ticket #764
+- added the possibility to use alternative Java (to the bundled one) on Windows; ticket #842
+
+- fixed OSX console not starting after upgrade from previous versions; ticket #840
+- fixed parsing relative paths in ASX playlists
+- optimised polling mechanism for shared folders on OSX / BSD, it now runs every 5 minutes by default as a POLLER; ticket #846
+- fixed some audio files being restarted after the buffering has finished in MediaBrowser
+- fixed burning in subtitles on Linux for file with apostrophy in the name; ticket #844
+- fixed MediaBrowser player sliding on small screens
+
+- updated bundled JRE to 1.8.0_31
+
+1.5
+===
+
+- reworked the way files are indexed to the library; ticket #410
+- requires Java 8 to run (Linux)
+- bundles Java runtime with the Windows and OSX versions; ticket #666
+- OSX installer starts Serviio on the system start-up as a service
+- CDS API now returns movie / episode cast information in the ObjectMetadata mode (Pro only)
+- video player in MediaBrowser now includes additional metadata and links to IMDB and TheMovieDb.org, where available (Pro only)
+- MediaBrowser now uses the Presentation settings (Display and Disabled only) (Pro only)
+- CDS API enables passing accessGroupId to browse and search requests (Pro only); ticket #788
+- added serviio.cdsAnonymousAccess system property that enabled access to mediaBrowser without logging in
+- live streams are now using less internet bandwidth for concurrent viewing (for the same profile and quality); ticket #673
+- searching for updates to already shared files now uses the preferred setting in the console; ticket #775
+- ignores @eadir folder from being indexed; ticket #774
+- added the possibility to filter out videos based on Rating for Limited access groups; ticket #789
+- added mjpeg container to transcoding matching
+- stored shared folders must be exclusive, ie no duplicates are allowed; ticket #796
+- ignore folders with a .nomedia file from adding to the library; ticket #582
+- identify movie metadata by IMDB id in file names; ticket #668
+- added support for .3g2 files; ticket #704
+- updated audio transcoding matching to copy the audio stream when bitrate is the same; ticket #793
+- added Recent Unwatched videos category; ticket #593
+- added Last Added Albums audio category; ticket #716
+- added transcoding matching for videos with multichannel audio; ticket #580
+- changed the way removable drives are handled, incl. removing the 'Scan for file additions and updates' setting for shared folders; ticket #820
+- added transcoding support for videos with speex audio streams; ticket #540
+- added transcoding support for videos with H264 / HEVC video streams; ticket #772
+- ability to turn-off chunked HTTP transport for a profile, where it is normally applicable; ticket #529
+- updated Sony BDP profile not to transcode DTS audio; ticket #371
+- filters out search categories that belong to disabled browsing categories
+- added support for thumbnails for Online container resources; ticket #694
+- updated XBox One profile with MKV support; ticket #827
+- added profile for Raumfeld devices; ticket #814
+- use HTML5 player for Android (Chrome) in MediaBrowser, incl. Chromecast support (Pro only); ticket #809
+- updated Sony TV 2014 profile; ticket #812
+
+- fixed displaying folders with ampersands in the title in MediaBrowser; ticket #770
+- search for external subtitles file now properly ignores case when not using any preferred language; ticket #783
+- fixed retrieving online content length when larger than 2GB; ticket #771
+- fix streaming delay for some audio files; ticket #808
+- fix Flowplayer logo appearing in MediaBrowser for some domains; ticket #835
+
+- updated Restlet to 2.2.2
+- updated Apache Derby to 10.11.1.1
+- updated JAudioTagger to 2.2.2
+- updated FFmpeg to the latest build (19/11/2014) from 2.4 branch (incl. --enable-libspeex)
+
+1.4.1.2
+=======
+
+- fixed MP3 mime-type syntax error, possibly causing MP3 playback errors / invisibility
+
+1.4.1.1
+=======
+
+- added serviio.useNetworkTOS system property (false by default)
+
+- fixed Images category in MediaBrowser
+- added FLAC transcoding to pre 2013 Viera profiles
+
+1.4.1
+=====
+
+- MediaBrowser player window now displays the context of the playlist items; ticket #745 (Pro only)
+- MediaBrowser playlist is scrollable using arrow keys; ticket #752 (Pro only)  
+- added a profile for Toshiba REGZA 2012-
+- updated iOS profile to transcode less files (requires iPad2 at least); ticket #753
+- new XBMC-style thumbnail naming is now supported (filename-thumb.jpg, filename-poster.jpg); ticket #758
+- if album artist is missing, use artist value instead; ticket #747
+- license checking thread now runs once a day not to wake NASes too often; ticket #739
+- added support for MySql queries; ticket #750
+- added MediaFormatProfiles for video files with DTS and DTS-HD audio
+- added support for transcoding DTS-HD MA audio; ticket #710
+- added profile for Roku
+- updated profiles for Viera devices; ticket #765
+- added profile for Sony BDP 2013 models
+
+- fixed the FlowPlayer logo occasionally appearing in MediaBrowser (Pro only)
+- fixed random MediaBrowser bugs (incl. playback in Firefox); ticket #737 (Pro only)
+- fixed the Play All button for Images in MediaBrowser (Pro only)
+- fixed year and rating not being updated in the MediaBrowser player window after a new item has been selected in the queue (Pro only)
+- fixed passing email-address-like credentials via feed URL
+- fixed 500 error in MediaBrowser when a different error message is expected; ticket #742
+- fixed parsing of WPL playlists with unsupported BOM
+- search index for online feeds is now updated also for cached items; ticket #744
+- fixed browsing error for see-through categories; ticket #756
+- added code that deals with invalid XML from Swisscenter; ticket #754
+- fixed adding tracks to albums when the album name or the artist name is very long; ticket #755
+- fixed detecting default embedded subtitles track; ticket #763 
+- ignores invalid DISCNUMBER audio metadata values; ticket #767
+
+1.4
+===
+
+- a totally new MediaBrowser (Pro only)
+- CDS /browse method now includes ETag header indicating if the response can be cached by the clients; ticket #714 (Pro only)
+- subtitles character encoding setting is now used also when converting softsubs
+- metadata flag (M) for shared folders now affects all types of descriptive metadata, not just online
+- added support for transcoding 4-2-2 pixel format videos for playback on older player which only support 4-2-0; ticket #671, #709
+- loggs stack trace when a plugin fails; ticket #728
+- added support for some rare files to Sony BDP profiles; ticket #725
+- extended caching online items for WebResource plugins to items that don't expire immediately
+- added presentation category for MPAA movie rating; ticket #380
+- added profile for Telenet Yelo TV
+- added getOnlineFeedExpiryInterval() shared method for the plugins; ticket #735
+- CDS search mechanism changed to give more accurate results; ticket #696
+- added profile for Xbox One
+- added profile for Sony 2013 TVs; ticket #724
+- split Samsung C/D/E/F profile to C/D and E/F for more reliable support of online content on E/F series
+
+- fixed retrieving thumbnails from ogg files
+- fixed M3U8 manifest being cut off when the file has been transcoded fully (http1.1)
+- fixed burned-in subtitles with apostrophy in filename for OSX/Linux
+- fixed creation of thumbnails for images that need to be rotated
+- added automatic image rotation to PS3 profile
+- fixed duplicate renderer registering caused by some routers
+- fixed FlowPlayer logo appearing in MediaBrowser in certain configurations
+- added support for video thumbnails on Samsung F series
+- removed using user-agent in FFmpeg commands if the protocol is not http(s); ticket #708
+- updated stream URL validation, to allow multiple # characters; ticket #715
+- fixed caching WebResource items when they are not valid; ticket #726
+
+1.3.1
+=====
+
+- added profile for Yamaha BD-A1020; ticket #695
+- added profile for Roku (via Chaneru)
+- added log warning if the server and the console are not the same version
+
+- adding new files to library uses less CPU and IO resources
+- uploading license will make immediate effect without the need to restart the console
+- fixed Pro evaluation period duration
+- fixed subtitles for WDTV live
+- fixed HLS transcoding for files with no audio
+- fixed extraction of some online resources that include quotes in the URL
+- fixed hardsubs on Linux and OSX
+
+- updated Lucene to 4.4.0
+
+1.3
+===
+
+- updated MediaBrowser to work on iOS devices (Pro only)
+- added Search to CDS API; ticket #607 (Pro only)
+- added thumbnails for folders to CDS API (Pro only); ticket #588
+- added default Access Group setting for renderers (Pro only); ticket #590 
+- removed the watermark from MediaBrowser player (Pro only)
+- added the option to disable access to all new renderers by default
+- added thumbnails for folders; ticket #271
+- added support for higher resolution thumbnails; ticket #634
+- fixed re-invoking transcoding command when previous attempt fails due to a temporary condition; ticket #578 
+- fixed delivering hardsubs for files including '&' on Windows
+- fixed MP3 year metadata extraction for ID3 v2.3 tags TIME value
+- removed system tray icon on OSX, all the options are now present on the Serviio-Console dock icon
+- added the option to transcode to H264
+- added the option to transcode to HLS (Http Live Streaming); ticket #560
+- added Audio -> Albums browsing category; ticket #367
+- keeping metadata (incl. cover art) when trancsoding to mp3; ticket #650
+- added Release year browsing category for videos; ticket #609
+- Added support for VTT subtitles
+- added support for MOV text subtitles
+- added serviio.onlineContentTimeout system property to control timeout for checking online content availability
+- added 'Last Listened' and 'Random Albums' audio categories; ticket #542 
+- profile ID max. length increased to 20 characters
+- updated WebResource plugin logic when handling items that expire immediately; ticket #626
+- album tracks are now sorted by disc number, where available; ticket #486
+- it is possible to provide character encoding of subtitle files when using hardsubs; ticket #643
+- updated series sorting; ticket #511
+- added multi CPU support to thumbnail generation; ticket #464
+- it's now possible to retrieve online thumbnails with a specific user agent; ticket #659
+- added ServiioLink support in the console; ticket #541
+- added detection of the server waking up from sleep; ticket #192
+- added feed parsing re-try mechanism; ticket #639
+- changed episode title formatting in Titles view; ticket #676
+- implemented support for Artists audio category on XBox 360; ticket #605
+- it is now possible to filter out Series data from some browsing categories; ticket #610
+- added support for import/export of online resources; ticket #494
+- image resolutions are now configurable in profile; ticket #640
+- added support for mp2 audio files; ticket #679
+- added support for wavpack audio files; ticket #647
+- added profile for Philips NP Streamium; ticket #629
+- added support for Musepack and Monkey's audio files; ticket #370
+- updated series metadata search for file names including release year
+
+- updated the way profile is passed in CDS API
+- updated themoviedb.org adaptor to use API v3; ticket #663
+- fixed DAR enforcement for anamorphic files
+- fixed finding external subtitles files when no language is preferred; ticket #658
+- fixed bound IP address reassignment when DHCP server cannot be reached; ticket #661
+- fixed invoking FFmpeg if Serviio is installed on a path including dodgy characters (Windows)
+- reverted back AAC transcoding on some Bravia profiles
+- fixed "Can't assign requested address" on OSX with Java 1.6.0_45 and higher
+- fixed Windows firewall rules being duplicated when reinstalling (without uninstalling first)
+
+- updated Apache Derby to 10.10.1.1
+- updated FFmpeg to N-54096-ge41bf19
+
+1.2.1
+=====
+
+- Sony BDP 2010 model is not detected by default
+- improved network discovery for the case of DHCP IP change while the server's running
+- added the possibility to re-try online metadata retrieval in a case of the online source being unreachable; ticket #646
+- improved FFmpeg failures logging; ticket #578
+- added support for binding to NICs with multiple IP addresses
+- added support for external subs in format filename.language_code.extension; ticket #651
+
+- fixed transcoding settings not being saved; ticket #641
+- fixed adding MKV files with many embedded subtitle tracks
+- made bound IP address retrieval more robust
+- fixed double subtitles (softsubs + hardsubs) being delivered in some cases
+- fixed encoding hardsubs for file names including characters [] and ,
+- release year of audio files is now included in the CDS responses properly
+
+1.2
+===
+
+- added support for burned-in (hardsubs) subtitles; ticket #316
+- added support for .ass, .ssa (SSA/ASS) subtitles; ticket #63
+- added support for .sub (MicroDVD) subtitles; ticket #246
+- added support for .txt subtitles (must be one of the supported types); ticket #248
+- added support for .smi (SAMI) subtitles
+- added support for subtitles embedded in video files (e.g. MKV); ticket #16
+- server can be bound to a particular network card, rather than an IP address; ticket #510
+- added support for playing RealVideo files natively
+- added OGG/FLAC audio support to Viera 2010 profile
+- fourCC and ftyp transcoding matching in now case insensitive
+- added transcoding matcher for constrained baseline H264 profile
+- chroma subsampling is now stored for online images as well
+- removed support for matching episode file names in format SSEE
+- added profile for Vizio TV
+- added databaseUpdateId field to /application REST resources; ticket #621
+- removed personal data from CDS /application resource; ticket #620
+- added router port mapping for accessing MediaBrowser and CDS API from the Internet (Pro only); ticket #546
+- added X-Serviio-ClientId HTTP header and clientId URL parameter for identifying CDS clients (Pro only); ticket #622
+- added External address field for easier setup in client CDS applications; ticket #630
+- added external port mapping check button
+- added support for local video thumbnails in the form of video_name.tbn and video_name.thm; ticket #517 and #474
+- added system property to control periodical check for new or updated plugins; ticket #619
+- added getExtractItemsTimeout() method to WebResourceUrlExtractor enabling plugins control the item list extraction timeout; ticket #618
+- multicast advertising only happens on one NIC now
+- profile parsing on the application startup is now much faster
+
+- fixed storing local audio cover image (folder.jpg)
+- fixed retrieving Genre ID3v2.4 tag from MP3 files
+- fixed support for transcoded images on some Samsung devices
+- removed hard coded 'http://' inside media-browser.js; ticket #624
+- keeps file size up-to-date in library; ticket #601
+- fixed storing online plugins in the cache; ticket #636
+- fixed feed item values storage when expiresImmediately=true in the online plugins; ticket #637
+- cache is cleaned when transcoding is turned on/off; ticket #583
+- fixed seeking in MediaBrowser
+
+- updated FFmpeg to 1.1.1
+- updated LAME MP3 encoder to 3.99.5
+- updated libRTMP to latest source
+
+
+1.1
+=====
+
+- added seeking support to MediaBrowser and CDS API; ticket #563 (Pro only)
+- added continuous playback to MediaBrowser (Pro only)
+- added support for creating playlists within MediaBrowser (Pro only)
+- added support for RAW image formats; ticket #137
+- improved time based seeking precision
+- added m2ts target video container for transcoding to BD-like container (m2ts with timestamps), 
+  should help when subtitles out of sync during transcoding; ticket #150
+- skipping 'series' file path element when retrieving episodic metadata from file name; ticket #572
+- updated XBMC extractor to support files generated by Media Center Master; ticket #531
+- finds AlbumArt.jpg as a local cover art for audio files
+- increased technical metadata retrieval durability for online streams; ticket #573
+- added the possibility to transcode videos based on the FourCC code of the video codec; ticket #567
+- updated H264 level-based transcoding decisions; ticket #584
+- enabled using hidden local cover art files (e.g. folder.jpg); ticket #533
+- added support for transcoding RealVideo files; ticket #250
+- it is now possible to change ordering of online resources; ticket #423
+- number of items in dynamic categories (Last Added, Last Viewed) is now configurable; ticket #357
+- enable turning off image thumbnail generation; ticket #552
+- updated AAC audio container detection via FFmpeg and added MP4 -> MP3 transcoding for online audio streams; ticket #550
+- added REST resource for retrieving details of installed plugins; ticket #564
+- added context menu for the Console text fields (cut/copy/paste)
+- enhanced online item id management, so that the id is new for each feed refresh; ticket #544
+- HTTP status code is now part of the REST API response status line; ticket #591
+- added automatic CPU detection for transcoding
+- removed the possibility to add renderers manually in the Console
+- enabled changing renderer name via the API
+- added profiles for more Sony devices; ticket #595
+
+- fixed adding files multiple times on Turkish localizations
+- fixed online audio problems with 2011 Sony Bravia profile
+- fixed the priority local cover files are applied
+- fixed MP3 ID3 tag handling to properly merge v1 and v2
+- fixed remuxing live streams in mpegts container; ticket #566
+- fixed DAR handling for files transcoding to FLV 
+- fixed the service crashing with "An internal error occurred (error code 7)" on Windows'; ticket #419
+- fixed the Windows installer, it now makes sure the target directory ends with /Serviio to avoid the Uninstaller removing unwanted files; ticket #589
+
+- added Apache commons-lang to the dependencies
+
+
+1.0.1
+=====
+
+- Viera profiles now transcode DTS to AC3 by default
+- updated DirecTV profile with online transcoding settings
+- added Sony Bravia US profiles
+
+- fixed playback of some videos on XBox360
+- fixed playback of camera video formats on Bravia devices
+- fixed support for very large playlists
+- fixed problems with adding some MKV files to the library
+- fixed maxBitrate transcoding constraint
+- fixed Loading screen on Samsung devices when browsing library with customized presentation categories
+
+- upgraded Apache Derby to 10.9.1.0
+
+1.0
+===
+
+- added Media Browser web application (Pro only)
+- implemeted content access rules (AccessGroups) (Pro only) ticket #65
+- implemented playlists; ticket #107
+- improved performance of library indexing
+- implemented CDS API for remote playback
+- added alwaysEnableTranscoding attribute on profile to override user preference from the console
+- added possibility to match any audio/video container in transcoding definitions with a wildcard (*)
+- added maxHeight transcoding attribute to enable limiting output video resolution; ticket #313
+- enabled streaming of rtp/rtsp audio streams
+- added possibility to enable/disable renderer access to the server; ticket #224
+- enabled checking the URL of live online streams in the console; ticket #491 
+- increased max. memory usage to 512MB to enable indexing or large image files
+- added media format profile MPEG_TS_JP_T; ticket #535
+- added the option to turn off automatic new version notification; ticket #489
+- updated XBMC extractor to support files generated by Media Center Master; ticket #531
+- updated XBMC extractor to use aired date instead of creation date for episodes; ticket #509
+- updated Sharp AQUOS profile to use less CPU when playing MKV files
+- added support for image transcoding in profiles.xml, currently fixes viewing of images with 444 chroma subsampling on Sony devices
+- added possibility to force display aspect ratio during transcoding; ticket #179
+- added support for feed URLs starting with feed://; ticket #539
+- added transcoding matching for H264 High_10 profile; ticket #537
+- added support for transcoding MKV files with header compression / header stripping; ticket #496
+- added more Panasonic Viera profiles; ticket #504
+- added Bravia 2012 profile and added support for truehd, VC1, 3gp and OGG video playback for Bravia devices; ticket #528
+- added system property 'serviio.fixedPointEncoders' that enables to use fixed point encoders (currently ac3); ticket #475
+- added shared methods for plugin development: decrypt, decryptAsHex; ticket #498
+- added Console system property serviio.consoleOpen that controls startup state of the Console window
+- updated FFmpeg invocation parameters to the one used in the latest FFmpeg release; ticket #508
+- it is now possible to use a specific User-Agent header when retrieving online content
+- updated Playstation 3 profile with support for WTV, DVR-MS and WMV files
+- added content type matching (live, vod) to online transcoding configuration
+- added matching based on SAR (squarePixels)
+
+- fixed WTV playback for WDTV live
+- fixed browsing on PS3 showing numbers instead of letters for initials; ticket #365
+- fixed browsing of items including new line characters in the description field
+- fixed saving genres with long names; ticket #487
+- fixed OutOfMemoryError breaking the library indexing process
+- fixed aspect ratio for some transcoded files on Xbox 360
+- plugins for image online feeds are now possible; ticket #506
+- fixed adding folders with too long names; ticket #440
+- fixed a bug when changing case of file name caused file to be duplicate in the library (Windows); ticket #442
+
+- updated XStream to version 2.4.2
+- updated Groovy to version 1.8.6
+- updated FFmpeg to past 0.11.1
+
+
+0.6.2
+=====
+
+- added transcoding definitions for VP8 video codec (like YouTube webm videos)
+- retrieves release date (if present) from XBMC .nfo files
+- improved detection of H264 level and profile
+- improved opening ports in Windows firewall for Windows Vista/7
+
+- fixed Samsung C/D series profile to enable subtitles / resume / menu integration
+- fixed detection of fps on some videos
+- fixed transcoding of wtv files
+- fixed settings bookmarks (Samsung) to work with local content only
+- fixed browsing live streams on some renderers
+- fixed transcoding with constrained bitrate
+- fixed feeds with encoding different than UTF-8, ticket #488
+- fixed PS3 profile to play online audio streams
+
+
+0.6.1
+=====
+
+- added support for live (online) streams; ticket #355
+- added support for WebResource online repositories and plugin system; ticket #415
+- updated wdtv live with online transcoding; ticket #414
+- added detection for new DirecTV devices; ticket #417
+- enhanced online feed data caching to lower CPU load and time needed to access them; ticket #402
+- online feeds are not listed unless they have been parsed; ticket #422
+- added configuration for (non h264) flv to online transcoding; ticket #425
+- added media format profiles for audio: AAC_ADTS, AAC_ADTS_320
+- max. number of returned feed items now only related to items of the requested file type; ticket #462
+- in a case of an error while accessing feed item we won't try again until the feed expires; ticket #459
+- updated error message in a case of invalid online resource URL in the console; ticket #458
+- passes real file size to renderers for content that is already fully transcoded; ticket #426
+- added possibility to assign display names to online repositories; ticket #405
+- enabled editing online resources; ticket #399
+- added possibility to enable/disable and force refresh single online resource; ticket #423
+- videos with no audio track are now supported; ticket #251
+- added transcoding setting to enable/disable producing the best quality possible
+- added support for AppleHttp online protocol; ticket #478
+- added Manufacturer device detection field; ticket #406
+- Windows installer (during upgrade) creates a back up copy of the original profiles.xml; ticket #377
+- console is now automatically started only for the user who installed it (on Windows); ticket #342
+- added ftyp major brand (for mp4 video files) to trancoding matchers; ticket 451
+- added media format profiles MPEG4_H263_3GPP_P0_L10_AMR, MPEG4_H263_MP4_P0_L10_AAC for H264 native playback; ticket #418
+- optimized memory allocation; ticket #396
+- added profile for Philips devices; ticket #437
+- addev VP8 video codec transcoding support
+- split Bravia profiles to 2009/2010/2011
+- merged Sony SMP profile with Sony BD profile
+
+- fixed feeds disappearing after some time (e.g. overnight); ticket #416
+- fixed updating metadata of currently shared files forced by new metadata files (e.g. folder.jpg)
+- fixed installation folder on Windows 64 bit OS
+- fixed max. number of audio channels to be used when transcoding to AC3; ticket #443
+- trimming URL when saving online content; ticket #455
+- fixed parsing of feeds beginning with BOM; ticket #411
+- manually assigned renderer profiles now stay even if the device auto-detects to another one; ticket #343
+- fixed detection of H264 level to take into account both, value in AVC header as well as number of reference frames; ticket #450
+- fixed on-the-fly plugin recompilation; ticket #483
+- updated transcoding API to enable to easily turn off transcoding without providing other information; ticket #484
+
+- updated Apache Derby to 10.8.2.2
+- updated FFmpeg to 0.9
+
+0.6
+===
+
+- added streaming of online feeds; ticket #83
+- added plugins for YouTube, GameTrailers.com, BBC iPlayer; ticket #136, #13
+- resumes playback (10) seconds before last viewed frame; ticket #318
+- added support for AAC (LATM syntax) audio track codec; ticket #320
+- added browsing music by album artist; ticket #309
+- added browsing music by composer; ticket #278
+- improved parsing of file names in the form of 'movie, the.avi'; ticket #296
+- logs online metadata lookup failures; ticket #294
+- added support for FLAC audio codec in video files; ticket #329
+- added support for VORBIS audio codec in video files; ticket #281
+- updated H264 level handling and updated Samsung profiles to transcode unsupported H264 levels; ticket #332
+- updated PS3 profile; ticket #336
+- added support for HD AVC/AC3 videos in MP4 container; ticket #317
+- added profiles for WDTV Live and LaCie LaCinema Media Players
+- it is no longer needed to use -Dserviio.remoteHost on the server side when setting up remote console
+- optimized local thumbnail extraction; ticket #349
+- added 'ping' resource to the REST API; ticket #356
+- added transcoding config for MKV with VC1 for Samsung profiles; ticket #361
+- updated Toshiba REGZA profile; ticket #195
+- updated Sony Bravia profile to support better browsing integration; ticket #334
+- added support for OGG video container and Theora video codec; ticket #363
+- added support for VC1/DTS in MPEG2TS container; ticket #376
+- added profile for Manta WiFi centre; ticket #346
+- added profile for Pure Flow devices; ticket #378
+- added support for TrueHD audio codec in video files; ticket #337
+- added JSON support to the REST API (thanks to kairoh); ticket #351
+- added support for DV video codec; ticket #244
+- added support for 3gp files; ticket #319
+- updated profile detection to work better with dynamically assigned IP addresses; ticket #343
+- enhanced library status monitoring; ticket #99
+- added possibility to force audio sample rate for transcoding (aSamplerate); ticket #302
+- added headless mode setting to the server component startup scripts; ticket #335
+- added metadata extractor for MyMovies files (mymovies.xml); ticket #78
+- Windows service installation is now optional in installer; ticket #173
+- Windows service now runs under a proper user; ticket #391
+- added support for HD MP4 videos with MP3 audio; ticket #398
+- added Sharp Aquos profile; ticket #400
+
+- fixed the case where there can be more stored renderers with the same IP address; ticket #291
+- fixed error during retrieving XBox video thumbnails; ticket #326
+- fixed start-up problems with certain OS locale settings; ticket #341
+- added optimizations for persons retrieval; ticket #340
+- fixed browsing for some devices that request unlimited number or results; ticket #350
+- supports file names with Unicode characters (Chinese, Greek, etc); ticket #266
+- added support for Java 7; ticket #379
+- fixed displaying categories on LG devices; ticket #360
+- weird frame rates default to 23.97; ticket #308
+- fixed disabled access to the server on some (e.g. Denon) devices; ticket #348
+- fixed playback for Popcorn Hour devices; ticket #339
+
+- updated Restlet to 2.0.9
+- updated Apache Derby to 10.8.1.2
+- updated FFmpeg to rev. 8bc3a4807e2da36f458e7784c3d390dbd19899a5
+
+0.5.2
+=====
+
+- added mov/mjpeg/lpcm transcode configuration to Samsung B profile; ticket #304
+- added support for thumbnails on XBox 360; ticket #311
+- supports subtitles menu on Samsung C series; ticket #270
+- integrates with Audio/Video/Image TV folders on Samsung C series
+- added Norwegian, Romanian and Bulgarian translation
+- added support for Samsung D series devices
+- updated Danish translation
+
+- fixed MKV with AAC transcoding; ticket #300
+- fixed resource URL encoding problems for some renderers; ticket #305
+- fixed retrieving .sub files which has not been fully implemented; ticket #303
+- fixed Bookmarks on Samsung C series
+- fixed handling of dodgy images, they will be added to library and not cause the indexing process to halt now
+
+0.5.1
+=====
+
+- implemented audio files transcoding; ticket #228
+- added support for FLAC files; ticket #205
+- added support for OGG files
+- H264 profile/level is now extracted from H264 videos and transcoding matcher has been updated to support 
+  transcoding of files with certain profile/level; ticket#225
+- folder.jpg now used for local video poster; ticket #258
+- added setable socket buffer size; ticket #162
+- added setable advertisement duration (-Dserviio.advertisementDuration); ticket #253
+- added advertiseService operation to the REST interface; ticket #256
+- renamed LPCM audio codec in profiles definition to 'lpcm'
+- added FLV transcode settings for Samsung C series; ticket #267
+- if search for hidden files is disabled hidden folders are skipped as well; ticket #237 
+- added option to retrieve original (non translated) movie name from online sources; ticket #263
+- added Hungarian, Spanish, Russian, Chinese, Portuguese (Brazil), Catalan and Danish translation
+- added support for AVI with mjpeg to Samsung profiles; ticket #273
+- merged Sony BDP profiles into one which supports multiple regions; ticket #243
+- enabled profile detection by http headers and upnp search simultaneously (Samsung C series BDP); ticket #262
+- added support for WTV files; ticket #249
+- implemented bookmark functionality for Samsung C series devices; ticket #234
+- enabled forcing stereo downmixing per profile; ticket #277
+- added wmapro as available transcode matcher audio codec; ticket #178
+- increased max. refresh interval to 4 digits (9999); ticket #254
+- title of parent for items from 'Display content only' categories is now optional; ticket #240
+- in a case the console doesn't have server connection it exits only in certain cases; ticket #285
+- DRM video files are skipped from being added to the library; ticket #287
+- changed tray icon on OSX (thanks to nanovivid); ticket #288
+- added DTS playback support for Panasonic profile; ticket #292
+
+- fixed Random audio category to include tracks outside the first 100
+- fixed stream mapping for streams numbered higher than 9; ticket #260
+- fixed audio bitrate of transcoding jobs to only use valid values; ticket #257
+- fixed searching for series that don't have English data on thetvdb.com; ticket #269
+- fixed H264 detection for latest FFmpeg builds; ticket #272
+- fixed FPS detection when FFmpeg reports 1k; ticket #274
+- fixed XBox transcoding breaking other renderers; ticket #286
+
+0.5
+===
+
+- added per-IP renderer profile management; ticket#127
+- added new functionality for configuring browsing categories; ticket #26
+- added support for Swisscenter video metadata; ticket #79
+- added support for XBMC video metadata; ticket #165
+- added support for .mts files; ticket #170
+- added support for .vdr files
+- added support for M2TS files with AVC video and DTS audio; ticket #180
+- added support for M2TS files with VC1 video and AC3 audio; ticket #197
+- added support for M2TS files with AVC video and MP2 audio; ticket #211
+- added support for M2TS files with MPEG4 part 2 video; ticket #206
+- added support for PNG image files
+- added support for GIF image files
+- added support for FLV files; ticket #129
+- added support for M4A (MP4/AAC) audio files; ticket #185
+- added support for DVR-MS files; ticket #218
+- displays file names instead of metadata title in Folders browsing category; ticket #138
+- it's now possible to transcode using mp2 as a target audio codec; ticket #177
+- added profile for Panasonic Viera incl. support for subtitles; ticket #176
+- added availability to browse files as they are being added (in a case of a large batch); ticket #199
+- added Audio Random browsing category; ticket #190
+- added possibility to retrieve online metadata in a preferred language; ticket #32
+- added possibility to force library refresh from the tray icon; ticket #207
+- added possibility to turn off scanning for new/updated files per a shared folder; ticket #157
+- added possibility to turn off searching for updates of files that are already shared; ticket #118
+- updated PS3 profile to be able to play AVI with H264 video
+- added start/stop Serviio service into the Start menu (Windows); ticket #214
+- browsing audio by music artists is now sorted by their first letter for easier navigation; ticket #106
+- added aBitrate attribute to video transcoding element in profiles.xml used to override default audio bitrate for transcoding; ticket #201
+- added Toshiba Rezga profile; ticket #195
+- console supports translations; ticket #171
+- browsing categories menu supports translations; ticket #172
+- added EU/US Sony BDP profiles; ticket #208
+- added forceVTranscoding attribute to video transcoding element in profiles.xml used to disable video stream muxing and forcing it to always re-encode; ticket #239 
+- added more episodic file name parsing; ticket #247
+
+- fixed adding media items into library when an associated person record is incomplete; ticket #169
+- fixed automatic IP detection, skips VMWare adapters; ticket #175
+- enabled dash characters in a folder name to be used during online metadata retrieval (for series/movies that contain dashes in their name)
+- implemented workaround for thetvdb.com sending gzip files instead of XML
+- fixed displaying of library refresh interval; ticket #189
+- enabled adding symbolic links (Linux, OSX) to the library; ticket #194
+- fixed starting console on OSes that don't support system tray; ticket #191
+- episodic metadata search now supports brackets in the file names; ticket #36
+- increased time available for video thumbnail generation to 160 sec.; ticket #200
+- fixed storing very long music album titles; ticket #209
+- fixed transcoding videos with multi-channel aac audio stream; ticket #203
+- fixed Linux detection for FreeBSD; ticket #222
+- fixed log file not rolling over properly; ticket #220
+- fixed accidental removing of items from library after clicking Save on the Library tab; ticket #233
+
+- updated Apache Derby to version 1.6.2.1
+- updated Restlet to version 2.0.4
+- updated FFmpeg to rev. 26303
+- updated Log4j to version 2.1.16
+
+0.4.2
+=====
+
+- Corba replaced with Restful services; ticket #155
+- added subtitles support for Samsung C series (TV, players); ticket #126 (thanks to kairoh)
+- added media format MPEG4_P2_MP4_SP_L6_AAC; ticket #142
+- added media format MPEG4_P2_MP4_NDSD
+- updated TheMovieDB extractor to utilize new release year search functionality; ticket #146
+- added icon to Serviio UPnP device 
+- video files are now advertised for non EU (US, Korea) regions as well; ticket #166
+- added support for Mpeg2TS profile formats without timestamp or with zero/valid timestamp in their transport 
+  packet to support Sony Bravia TVs
+- added profile for Sony Bluray players; ticket #149
+- added profile for Sony Bravia TV; ticket #153 (thanks to Illico)
+
+- now works properly with non-english OS locale settings; ticket #131
+- supports absolute URL for service endpoints; ticket #152
+- fixed storing very long item titles; ticket #144
+- fixed NullPointerException during movie metadata extraction; ticket #135
+- fixed closing DB operations before shutting down; ticket #160
+- fixed online metadata search for filenames with single word all in capitals (e.g. NCIS)
+
+0.4.1
+=====
+
+- added caching of library information for faster browsing experience; ticket #86
+- added profile for Samsung C-series devices
+- added support for MJPEG video codec; ticket #120
+- added support for MPEG4 Microsoft variant (or DIV3); ticket #117
+- added possibility of not limiting image resolution to 4096x4096 if device supports it; ticket #121
+- added tool tip on shared folder name in console to enable distinguishing long entries; ticket #122
+- added subtitles support for LG BD players; ticket #124
+- added possibility to disable generation of thumbnails for local video files; ticket #90
+- added possibility to turn off online metadata extraction for some folders; ticket #114
+- added option to select either Server, Console or both for Windows Installation; ticket #47
+
+- fixed remote console startup
+- fixed storing music albums with long titles; ticket #110
+- fixed console in a case when system tray is not supported by the OS; ticket #109
+- bundled FFmpeg now works on OSX 10.5
+- fixed storing corrupted fps value of some files; ticket #112
+- better management of metadata for files copied from DVD (Video_TS, VTS_, etc)
+- thumbnail extraction is now avoided for unrecognized file to save CPU; ticket #125
+- fixed support for files with names including non-latin characters; ticket #123
+- fixed video playback stuttering (high CPU usage during playback)
+
+- updated Apache Derby to version 10.6.1.0
+
+0.4
+===
+
+- added video 'on-the-fly' transcoding capabilities; ticket #46
+- added DB optimalization configuration for faster browsing
+- updated profile detection mechanism to be able to interrogate any HTTP header and check its value against a regular expression
+- enabled entering remote shared folders (when the console runs on a different machine than the server); ticket #74  
+- enabled sharing images with resolution higher that 4096x4096; ticket #25
+- added support for MP4 with H264 and LPCM (e.g. Canon DSLR cameras' video format); ticket #67
+- added support for WMV files including WMA PRO 10 audio track; closes #76
+- added link to serviio.org to About tab of the console; ticket #84
+- displays console window after console start on Linux and OSX; ticket #77
+- added more episodic file name patterns (see http://www.serviio.org/index.php?option=com_content&view=article&id=12); ticket #36
+- enabled sharing of root folders (e.g. c:\, d:\); ticket #75
+- added automatic image rotation based on EXIF metadata; ticket #55
+- added .mov extension for video files; ticket #97
+- added profile for Samsung A-series TVs; ticket #88
+- added profile for DirecTV DVR
+- Windows installer now detects Java on 64-bit machines; ticket #81
+- possibility to provide FFmpeg location using ffmpeg.location system variable
+- added support for MPEG2TS files with .tp extension; ticket #89 
+- added system tray menu item to enable/disable automatic library updates; ticket #102
+
+- updated MP3 mime-type to fix playback on some devices; ticket #66
+- fixed specific AC-3 audio track detection; ticket #80
+- fixed audio track detection in a case of multiple tracks; ticket #80
+- fixed Linux console startup script; ticket #64
+- added more available memory (384MB) to handle transcoding of large images
+- images are sorted by file name in folder view; ticket #71
+- fixed marking of viewed assets to be more generic and support more devices; ticket #82
+- fixed audio album art not showing on some devices; ticket #69
+- fixed locking of streamed files; ticket #94
+- browsing in the Folder category is now faster
+- optimized library updating mechanism for speed and less CPU utilization; ticket #72, #73
+
+- updated FFmpeg to revision 23012, it also enables MP3 encoding (thanks to LAME MP3 Encoder)
+- updated Apache Derby to version 10.5.3.0
+
+0.3.1
+=====
+
+- added possibility to connect to the Serviio server from a remote console (using -Dserviio.corbaHost property)
+- added support for ID3v22 cover art tag in MP3 files
+- added support for parsing file names with DBRip in them
+- added more file name patterns for series; ticket #36
+- episode numbers are now 2 digits (padded with 0 if needed) for proper sorting on some devices; ticket #52
+- added possibility to skip Java install if not found; ticket #50
+- added 'Last Watched' notifier on series' seasons and episodes; ticket #53 
+- added possibility to add year to series name (useful when series name is not unique enough) 
+- streaming Music on XBox360 is now possible; ticket #56
+
+- fixed ticket #39: Wait for Corba Naming service to start-up
+- fixed ticket #41: Missing response for malformed Subscribe message
+- fixed ticket #42: Wrong HTTP status codes
+- fixed ticket #49: Browsing Folders category is slow
+- fixed 'Last Added' video category to show files that have been added to the library most recently
+
+- upgraded JAudioTagger library to version 2.0.1
+
+0.3
+===
+
+- implemented client/server architecture; Serviio server now runs independently from the Console
+- removed "-headless" agrument; not needed - just run the server
+- Serviio server now starts as a Service (on Windows) automatically after Windows startup; ticket #27
+- added 'Last Added videos' browse category
+
+- fixed ticket #19: Folder browsing doesn't work for images
+- fixed ticket #21: DATE header in soap responses has invalid format
+- fixed ticket #22: FFmpeg process is killed when hanging for too long
+- fixed ticket #23: Running on Vista/Win 7 needs admin rights
+- fixed ticket #24: Browsing on XBox 360 only shows content in Folders categories
+- fixed ticket #29: Wrong TIMEOUT header value in UPnP event subscription
+- fixed ticket #30: Multiple NIC support for multicasting SSDP messages (didn't bind to the proper IP address, causing Serviio not appearing on the device)
+- Serviio now should work with other media servers installed (e.g. PS3MS)
+
+0.2
+===
+
+- added support for automatic renderer profile detection (for devices that support it)
+- profiles are now configured in profiles.xml file for better renderer compatibility
+- added basic skeleton for Playstation 3 profile
+- added support for files with extensions .divx and .m2ts
+- added hierarchical folder browsing (file-system like)
+- added support for MP4 files including ASF video (DivX, XviD, QuickTime)
+- added a new UI field for binding Serviio to a specific IP address (ticket #11)
+
+- fixed support for AC-3 audio codec in video files when using FFmpeg compiled with LGPL licence
+- fixed responses to discovery requests from devices with MX header of value 1 (e.g. Viera TV)
+- fixed ticket #14: marking video as 'read' multiple times when there are multiple initial requests for the resource
+- fixed ticket #12: TheMovieDb.org API update
+
+0.1.1
+=====
+
+- added support for full HD VC-1 files (in ASF container); ticket #1
+- added notification about Library updating when Serviio starts (which might take some time); ticket #4
+- added possibility to open the console from system tray context menu
+- added button enabling to force the library refresh; ticket #8
+- library updating now starts immediately after a change to the shared folders is made (without the need to wait for 5 minutes)
+
+- fixed local IP address resolving, which might cause the server to be non-accessible
+- fixed multicast socket closing in a case of SSDP error
+- fixed ticket #3: When switching renderer profiles the ContentDefinition is not re-initialized
+- fixed ticket #5: FileNameParser should be able to deals with DVD-like structure
+- fixed skipping MP3 files that only had ID3v1 tag inside
+- fixed ticket #7: Allow file names longer that 128 characters (allows 256 now)
+- fixed image metadata retrieval for images that don't have complete set of metadata
+
+- OSX version includes FFmpeg compiled to work on OSX 10.4 (thanks to Shompola)  
