@@ -6,9 +6,9 @@ Version: 2.1
 Release: alt1
 License: Freeware
 Summary: A free media server
-Url: https://download.serviio.org/
+Url: https://download.serviio.org/releases/
 Group: Networking/Other
-Source0: https://download.serviio.org/releases/%oname-linux.tar.gz
+Source: %oname-linux.tar.gz
 Source1: serviio.service
 Source3: serviio.png
 BuildRequires: tar
