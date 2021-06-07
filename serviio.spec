@@ -27,7 +27,6 @@ or mobile phone) on your connected home network.
 
 %files
 %doc legal/{*.txt,*.xerox} *.txt
-%config(noreplace) %_sysusersdir/serviio.conf
 %_iconsdir/%name.png
 %_unitdir/serviio.service
 %dir %_datadir/java/serviio
