@@ -8,7 +8,7 @@ License: Freeware
 Summary: A free media server
 Url: https://download.serviio.org/releases/
 Group: Networking/Other
-Source: serviio-%version-linux.tar
+Source: serviio-%version-linux.tar.gz
 Source1: serviio.service
 Source3: serviio.png
 BuildRequires: tar
