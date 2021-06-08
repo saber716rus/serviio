@@ -1,6 +1,4 @@
 %define debug_package %nil
-%define oname %name-%version
-
 Name: serviio
 Version: 2.1
 Release: alt1
@@ -73,7 +71,7 @@ install -d %buildroot%_datadir/applications
 
 cat > %buildroot%_datadir/applications/%name.desktop << EOF
 [Desktop Entry]
-Name=%oname
+Name=serviio
 Icon=%name
 Comment=A free media server
 Comment [ru]= Бесплатный медиасервер
