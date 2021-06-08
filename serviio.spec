@@ -82,3 +82,8 @@ URL=http://localhost:23423/console
 Type=Link
 Categories=AudioVideo;
 EOF
+
+%changelog
+* Tue Jun 08 2021 Nikolaj Sabelnikov <saber@altlinux.ru> 2.1-alt1
+- 
+
